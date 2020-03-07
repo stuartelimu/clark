@@ -1,24 +1,30 @@
 import React, { Component } from "react";
 import Articles from "../components/Article";
+import CustomForm from "../components/Form";
 import axios from "axios";
 
 class ArticleList extends Component {
-
   state = {
-    articles: [],
-  }
+    articles: []
+  };
 
   componentDidMount() {
-    axios.get('http://127.0.0.1:8000/api/')
-      .then(res => {
-        this.setState({
-          articles: res.data
-        })
-      })
+    axios.get("http://127.0.0.1:8000/api/").then(res => {
+      this.setState({
+        articles: res.data
+      });
+    });
   }
 
   render() {
-    return <Articles data={this.state.articles} />
+    return (
+      <div>
+        <Articles data={this.state.articles} />
+        <br />
+        <h2>Create an article</h2>
+        <CustomForm />
+      </div>
+    );
   }
 }
 
