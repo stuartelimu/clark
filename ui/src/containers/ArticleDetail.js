@@ -16,7 +16,6 @@ class ArticleDetail extends Component {
         this.setState({
           article: res.data
         })
-        console.log(res.data)
       })
   }
 
