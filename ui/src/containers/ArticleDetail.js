@@ -28,7 +28,7 @@ class ArticleDetail extends Component {
   <p>{this.state.article.content}</p>
     </Card>
 
-    <CustomForm />
+    <CustomForm requestType="put" buttonText="Update" articleID={this.props.match.params.articleID} />
     </div>
     );
   }
